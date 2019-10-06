@@ -1,0 +1,11 @@
+G:\WinFormApp (Сентябрь)\ProjectWS_3\bin\Release\ProjectWS_3.exe.config
+G:\WinFormApp (Сентябрь)\ProjectWS_3\bin\Release\ProjectWS_3.exe
+G:\WinFormApp (Сентябрь)\ProjectWS_3\bin\Release\ProjectWS_3.pdb
+G:\WinFormApp (Сентябрь)\ProjectWS_3\obj\Release\ProjectWS_3.csprojAssemblyReference.cache
+G:\WinFormApp (Сентябрь)\ProjectWS_3\obj\Release\ProjectWS_3.Properties.Resources.resources
+G:\WinFormApp (Сентябрь)\ProjectWS_3\obj\Release\ProjectWS_3.csproj.GenerateResource.cache
+G:\WinFormApp (Сентябрь)\ProjectWS_3\obj\Release\ProjectWS_3.csproj.CoreCompileInputs.cache
+G:\WinFormApp (Сентябрь)\ProjectWS_3\obj\Release\ProjectWS_3.exe
+G:\WinFormApp (Сентябрь)\ProjectWS_3\obj\Release\ProjectWS_3.pdb
+G:\WinFormApp (Сентябрь)\ProjectWS_3\obj\Release\ProjectWS_3.Authorization.resources
+G:\WinFormApp (Сентябрь)\ProjectWS_3\obj\Release\ProjectWS_3.Registration.resources
