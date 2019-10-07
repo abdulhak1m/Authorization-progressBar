@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             this.Top_panel = new System.Windows.Forms.Panel();
             this.Close_btn = new System.Windows.Forms.Button();
@@ -37,8 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmb_TypeUser = new System.Windows.Forms.ComboBox();
-            this.tblWS2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbRBTDataSet = new ProjectWS_3.dbRBTDataSet();
             this.Registration_general = new System.Windows.Forms.Panel();
             this.NextPanelConfidentility_btn = new System.Windows.Forms.Button();
             this.BackPanleTypeUser_btn = new System.Windows.Forms.Button();
@@ -58,10 +55,15 @@
             this.Name_txt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Registration_done = new System.Windows.Forms.Panel();
+            this.linklblBackAutho = new System.Windows.Forms.LinkLabel();
             this.label10 = new System.Windows.Forms.Label();
             this.Registration_error = new System.Windows.Forms.Panel();
-            this.tbl_WS2TableAdapter = new ProjectWS_3.dbRBTDataSetTableAdapters.tbl_WS2TableAdapter();
+            this.linklblReturnRegistr = new System.Windows.Forms.LinkLabel();
+            this.linklblErrorPanelBackAutho = new System.Windows.Forms.LinkLabel();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel_Confidentiality = new System.Windows.Forms.Panel();
+            this.show_password = new System.Windows.Forms.Button();
+            this.showConfirmPassword = new System.Windows.Forms.Button();
             this.btn_done = new System.Windows.Forms.Button();
             this.BackRegistrationGeneralbtn = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -73,16 +75,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Usernama_txt = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.showConfirmPassword = new System.Windows.Forms.Button();
-            this.show_password = new System.Windows.Forms.Button();
-            this.linklblBackAutho = new System.Windows.Forms.LinkLabel();
-            this.linklblErrorPanelBackAutho = new System.Windows.Forms.LinkLabel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.linklblReturnRegistr = new System.Windows.Forms.LinkLabel();
             this.Top_panel.SuspendLayout();
             this.Type_user.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblWS2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbRBTDataSet)).BeginInit();
             this.Registration_general.SuspendLayout();
             this.Registration_done.SuspendLayout();
             this.Registration_error.SuspendLayout();
@@ -162,25 +156,15 @@
             // 
             // cmb_TypeUser
             // 
-            this.cmb_TypeUser.DataSource = this.tblWS2BindingSource;
-            this.cmb_TypeUser.DisplayMember = "Type";
             this.cmb_TypeUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_TypeUser.FormattingEnabled = true;
+            this.cmb_TypeUser.Items.AddRange(new object[] {
+            "Пользователь (нуб)",
+            "Администратор (гуру)"});
             this.cmb_TypeUser.Location = new System.Drawing.Point(372, 188);
             this.cmb_TypeUser.Name = "cmb_TypeUser";
             this.cmb_TypeUser.Size = new System.Drawing.Size(298, 28);
             this.cmb_TypeUser.TabIndex = 0;
-            this.cmb_TypeUser.ValueMember = "UserId";
-            // 
-            // tblWS2BindingSource
-            // 
-            this.tblWS2BindingSource.DataMember = "tbl_WS2";
-            this.tblWS2BindingSource.DataSource = this.dbRBTDataSet;
-            // 
-            // dbRBTDataSet
-            // 
-            this.dbRBTDataSet.DataSetName = "dbRBTDataSet";
-            this.dbRBTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Registration_general
             // 
@@ -378,6 +362,19 @@
             this.Registration_done.Size = new System.Drawing.Size(1043, 447);
             this.Registration_done.TabIndex = 3;
             // 
+            // linklblBackAutho
+            // 
+            this.linklblBackAutho.ActiveLinkColor = System.Drawing.Color.Indigo;
+            this.linklblBackAutho.AutoSize = true;
+            this.linklblBackAutho.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.linklblBackAutho.LinkColor = System.Drawing.Color.BlueViolet;
+            this.linklblBackAutho.Location = new System.Drawing.Point(417, 194);
+            this.linklblBackAutho.Name = "linklblBackAutho";
+            this.linklblBackAutho.Size = new System.Drawing.Size(217, 22);
+            this.linklblBackAutho.TabIndex = 1;
+            this.linklblBackAutho.TabStop = true;
+            this.linklblBackAutho.Text = "<-- Окно авторизации";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -400,9 +397,43 @@
             this.Registration_error.Size = new System.Drawing.Size(1043, 447);
             this.Registration_error.TabIndex = 0;
             // 
-            // tbl_WS2TableAdapter
+            // linklblReturnRegistr
             // 
-            this.tbl_WS2TableAdapter.ClearBeforeFill = true;
+            this.linklblReturnRegistr.ActiveLinkColor = System.Drawing.Color.Indigo;
+            this.linklblReturnRegistr.AutoSize = true;
+            this.linklblReturnRegistr.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.linklblReturnRegistr.LinkColor = System.Drawing.Color.BlueViolet;
+            this.linklblReturnRegistr.Location = new System.Drawing.Point(551, 247);
+            this.linklblReturnRegistr.Name = "linklblReturnRegistr";
+            this.linklblReturnRegistr.Size = new System.Drawing.Size(184, 22);
+            this.linklblReturnRegistr.TabIndex = 3;
+            this.linklblReturnRegistr.TabStop = true;
+            this.linklblReturnRegistr.Text = "Повторить попытку";
+            // 
+            // linklblErrorPanelBackAutho
+            // 
+            this.linklblErrorPanelBackAutho.ActiveLinkColor = System.Drawing.Color.Indigo;
+            this.linklblErrorPanelBackAutho.AutoSize = true;
+            this.linklblErrorPanelBackAutho.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.linklblErrorPanelBackAutho.LinkColor = System.Drawing.Color.BlueViolet;
+            this.linklblErrorPanelBackAutho.Location = new System.Drawing.Point(274, 247);
+            this.linklblErrorPanelBackAutho.Name = "linklblErrorPanelBackAutho";
+            this.linklblErrorPanelBackAutho.Size = new System.Drawing.Size(217, 22);
+            this.linklblErrorPanelBackAutho.TabIndex = 3;
+            this.linklblErrorPanelBackAutho.TabStop = true;
+            this.linklblErrorPanelBackAutho.Text = "<-- Окно авторизации";
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.ForeColor = System.Drawing.Color.DarkViolet;
+            this.label11.Location = new System.Drawing.Point(77, 133);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(924, 70);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Ошибка. #1898 (Что-то помешало регистрации)\r\n\r\nРегистрация не прошла, пожалуйста," +
+    " вернитесь в окно авторизации или повторите попытку.";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel_Confidentiality
             // 
@@ -425,6 +456,38 @@
             this.panel_Confidentiality.Size = new System.Drawing.Size(1043, 447);
             this.panel_Confidentiality.TabIndex = 5;
             // 
+            // show_password
+            // 
+            this.show_password.BackColor = System.Drawing.Color.White;
+            this.show_password.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.show_password.FlatAppearance.BorderSize = 0;
+            this.show_password.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.show_password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.show_password.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.show_password.ForeColor = System.Drawing.Color.White;
+            this.show_password.Image = ((System.Drawing.Image)(resources.GetObject("show_password.Image")));
+            this.show_password.Location = new System.Drawing.Point(676, 168);
+            this.show_password.Name = "show_password";
+            this.show_password.Size = new System.Drawing.Size(42, 29);
+            this.show_password.TabIndex = 16;
+            this.show_password.UseVisualStyleBackColor = false;
+            // 
+            // showConfirmPassword
+            // 
+            this.showConfirmPassword.BackColor = System.Drawing.Color.White;
+            this.showConfirmPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.showConfirmPassword.FlatAppearance.BorderSize = 0;
+            this.showConfirmPassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.showConfirmPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showConfirmPassword.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showConfirmPassword.ForeColor = System.Drawing.Color.White;
+            this.showConfirmPassword.Image = ((System.Drawing.Image)(resources.GetObject("showConfirmPassword.Image")));
+            this.showConfirmPassword.Location = new System.Drawing.Point(676, 245);
+            this.showConfirmPassword.Name = "showConfirmPassword";
+            this.showConfirmPassword.Size = new System.Drawing.Size(42, 29);
+            this.showConfirmPassword.TabIndex = 16;
+            this.showConfirmPassword.UseVisualStyleBackColor = false;
+            // 
             // btn_done
             // 
             this.btn_done.BackColor = System.Drawing.Color.DarkViolet;
@@ -435,8 +498,9 @@
             this.btn_done.Name = "btn_done";
             this.btn_done.Size = new System.Drawing.Size(137, 39);
             this.btn_done.TabIndex = 12;
-            this.btn_done.Text = "Вперед";
+            this.btn_done.Text = "Готово";
             this.btn_done.UseVisualStyleBackColor = false;
+            this.btn_done.Click += new System.EventHandler(this.Btn_done_Click);
             // 
             // BackRegistrationGeneralbtn
             // 
@@ -526,89 +590,6 @@
             this.label9.TabIndex = 5;
             this.label9.Text = "Имя пользователя*:";
             // 
-            // showConfirmPassword
-            // 
-            this.showConfirmPassword.BackColor = System.Drawing.Color.White;
-            this.showConfirmPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.showConfirmPassword.FlatAppearance.BorderSize = 0;
-            this.showConfirmPassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.showConfirmPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showConfirmPassword.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.showConfirmPassword.ForeColor = System.Drawing.Color.White;
-            this.showConfirmPassword.Image = ((System.Drawing.Image)(resources.GetObject("showConfirmPassword.Image")));
-            this.showConfirmPassword.Location = new System.Drawing.Point(676, 245);
-            this.showConfirmPassword.Name = "showConfirmPassword";
-            this.showConfirmPassword.Size = new System.Drawing.Size(42, 29);
-            this.showConfirmPassword.TabIndex = 16;
-            this.showConfirmPassword.UseVisualStyleBackColor = false;
-            // 
-            // show_password
-            // 
-            this.show_password.BackColor = System.Drawing.Color.White;
-            this.show_password.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.show_password.FlatAppearance.BorderSize = 0;
-            this.show_password.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.show_password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.show_password.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.show_password.ForeColor = System.Drawing.Color.White;
-            this.show_password.Image = ((System.Drawing.Image)(resources.GetObject("show_password.Image")));
-            this.show_password.Location = new System.Drawing.Point(676, 168);
-            this.show_password.Name = "show_password";
-            this.show_password.Size = new System.Drawing.Size(42, 29);
-            this.show_password.TabIndex = 16;
-            this.show_password.UseVisualStyleBackColor = false;
-            // 
-            // linklblBackAutho
-            // 
-            this.linklblBackAutho.ActiveLinkColor = System.Drawing.Color.Indigo;
-            this.linklblBackAutho.AutoSize = true;
-            this.linklblBackAutho.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linklblBackAutho.LinkColor = System.Drawing.Color.BlueViolet;
-            this.linklblBackAutho.Location = new System.Drawing.Point(417, 194);
-            this.linklblBackAutho.Name = "linklblBackAutho";
-            this.linklblBackAutho.Size = new System.Drawing.Size(217, 22);
-            this.linklblBackAutho.TabIndex = 1;
-            this.linklblBackAutho.TabStop = true;
-            this.linklblBackAutho.Text = "<-- Окно авторизации";
-            // 
-            // linklblErrorPanelBackAutho
-            // 
-            this.linklblErrorPanelBackAutho.ActiveLinkColor = System.Drawing.Color.Indigo;
-            this.linklblErrorPanelBackAutho.AutoSize = true;
-            this.linklblErrorPanelBackAutho.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linklblErrorPanelBackAutho.LinkColor = System.Drawing.Color.BlueViolet;
-            this.linklblErrorPanelBackAutho.Location = new System.Drawing.Point(274, 247);
-            this.linklblErrorPanelBackAutho.Name = "linklblErrorPanelBackAutho";
-            this.linklblErrorPanelBackAutho.Size = new System.Drawing.Size(217, 22);
-            this.linklblErrorPanelBackAutho.TabIndex = 3;
-            this.linklblErrorPanelBackAutho.TabStop = true;
-            this.linklblErrorPanelBackAutho.Text = "<-- Окно авторизации";
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.ForeColor = System.Drawing.Color.DarkViolet;
-            this.label11.Location = new System.Drawing.Point(77, 133);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(924, 70);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Ошибка. #1898 (Что-то помешало регистрации)\r\n\r\nРегистрация не прошла, пожалуйста," +
-    " вернитесь в окно авторизации или повторите попытку.";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // linklblReturnRegistr
-            // 
-            this.linklblReturnRegistr.ActiveLinkColor = System.Drawing.Color.Indigo;
-            this.linklblReturnRegistr.AutoSize = true;
-            this.linklblReturnRegistr.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linklblReturnRegistr.LinkColor = System.Drawing.Color.BlueViolet;
-            this.linklblReturnRegistr.Location = new System.Drawing.Point(551, 247);
-            this.linklblReturnRegistr.Name = "linklblReturnRegistr";
-            this.linklblReturnRegistr.Size = new System.Drawing.Size(184, 22);
-            this.linklblReturnRegistr.TabIndex = 3;
-            this.linklblReturnRegistr.TabStop = true;
-            this.linklblReturnRegistr.Text = "Повторить попытку";
-            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -627,12 +608,9 @@
             this.Name = "Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
-            this.Load += new System.EventHandler(this.Registration_Load);
             this.Top_panel.ResumeLayout(false);
             this.Type_user.ResumeLayout(false);
             this.Type_user.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblWS2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbRBTDataSet)).EndInit();
             this.Registration_general.ResumeLayout(false);
             this.Registration_general.PerformLayout();
             this.Registration_done.ResumeLayout(false);
@@ -657,9 +635,6 @@
         private System.Windows.Forms.ComboBox cmb_TypeUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Continue_btn;
-        private dbRBTDataSet dbRBTDataSet;
-        private System.Windows.Forms.BindingSource tblWS2BindingSource;
-        private dbRBTDataSetTableAdapters.tbl_WS2TableAdapter tbl_WS2TableAdapter;
         private System.Windows.Forms.TextBox Name_txt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;

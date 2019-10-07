@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 using System.Windows.Forms;
 
 namespace ProjectWS_3
@@ -19,6 +21,8 @@ namespace ProjectWS_3
         public Registration()
         {
             InitializeComponent();
+
+
             // передвижение формы
             #region Top_panel
             int move = 0, moveX = 0, moveY = 0;
@@ -57,10 +61,37 @@ namespace ProjectWS_3
             linklblReturnRegistr.Click += (s, e) => { Panel(Type_user); };
         }
 
-        void Registration_Load(object sender, EventArgs e)
+        readonly static string MyConnection = ConfigurationManager.ConnectionStrings["DbConnection"].ConnectionString;
+
+        // создаем метож добавления, т.е. реализуем модуль регистрации
+        public bool Insert()
         {
-            // TODO: This line of code loads data into the 'dbRBTDataSet.tbl_WS2' table. You can move, or remove it, as needed.
-            this.tbl_WS2TableAdapter.Fill(this.dbRBTDataSet.tbl_WS2);
+            bool IsSuccess = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(MyConnection))
+                {
+                    string query = $" insert into tbl_TypeUser ([Name], [Surname], [E-mail], [Gender], [Username], [Passsword], [ConfirmPassword])" +
+                        $"'{Name_txt.Text}', '{Surname_txt.Text}', '{Gender_cmb.Text}', '{Email_txt.Text}', '{Function_cmb.Text}', '{Usernama_txt.Text}', '{Password_txt.Text}', '{ConfirmPassword_txt.Text}'";
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    int row = command.ExecuteNonQuery();
+                    IsSuccess = row > 0 ? true : false;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, ex.Source); }
+            return IsSuccess;
+           
+        }
+
+        void Btn_done_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool success = Insert();
+                Panel(success ? Registration_done : Registration_error);
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, ex.Source); }
         }
     }
 }

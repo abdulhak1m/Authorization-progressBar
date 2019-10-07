@@ -58,7 +58,7 @@ namespace ProjectWS_3
 
         void Login_btn_Click(object sender, System.EventArgs e)
         {
-            // добаление
+            // авторизация
         }
     }
 }
